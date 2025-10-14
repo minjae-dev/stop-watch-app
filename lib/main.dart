@@ -1,99 +1,111 @@
+import 'package:apptoon/screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(const App());
 }
 
-class App extends StatefulWidget {
+class App extends StatelessWidget {
   const App({super.key});
-
-  @override
-  State<App> createState() => _AppState();
-}
-
-class _AppState extends State<App> {
-  bool showTitle = true;
-  void toggleTitle() {
-    setState(() {
-      showTitle = !showTitle;
-    });
-  }
-
-  int counter = 0;
-  List<int> clickCounts = [];
-  void onClicked() {
-    setState(() {
-      counter++;
-      clickCounts.add(clickCounts.length);
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
+        scaffoldBackgroundColor: const Color(0xffE7626C),
         textTheme: const TextTheme(
-          titleLarge: TextStyle(
-            fontSize: 1,
-            fontWeight: FontWeight.bold,
-            color: Colors.red,
-          ),
+          headlineLarge: TextStyle(color: Color(0xff232B55)),
         ),
+        cardColor: const Color(0xffF4EDDB),
       ),
-      home: Scaffold(
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              showTitle ? const MyLargeTitle() : const Text('No Title'),
-              IconButton(
-                icon: const Icon(Icons.remove_red_eye),
-                onPressed: toggleTitle,
-              ),
-              // Text('Click Counter', style: TextStyle(fontSize: 24)),
-              // Text(
-              //   '$counter',
-              //   style: const TextStyle(
-              //     fontSize: 48,
-              //     fontWeight: FontWeight.bold,
-              //   ),
-              // ),
-              // for (var n in clickCounts)
-              //   Text('Click #$n', style: const TextStyle(fontSize: 10)),
-              // IconButton(
-              //   onPressed: onClicked,
-              //   icon: const Icon(Icons.add_box_rounded),
-              //   iconSize: 48,
-              // ),
-            ],
-          ),
-        ),
-      ),
-      //       crossAxisAlignment: CrossAxisAlignment.start,
-      //       children: [
-      //         const SizedBox(height: 70),
-      //         Row(
-      //           mainAxisAlignment: MainAxisAlignment.end,
-      //           children: [
-      //             Column(
-      //               crossAxisAlignment: CrossAxisAlignment.end,
-      //               children: [
-      //                 const Text(
-      //                   'Hey! Jamie',
-      //                   style: TextStyle(
-      //                     color: Colors.white,
-      //                     fontSize: 28,
-      //                     fontWeight: FontWeight.w600,
+      home: const HomeScreen(),
+    );
+  }
+}
+
+// class _AppState extends State<App> {
+//   bool showTitle = true;
+//   void toggleTitle() {
+//     setState(() {
+//       showTitle = !showTitle;
+//     });
+//   }
+
+//   int counter = 0;
+//   List<int> clickCounts = [];
+//   void onClicked() {
+//     setState(() {
+//       counter++;
+//       clickCounts.add(clickCounts.length);
+//     });
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return const MaterialApp(
+      // home: const Scaffold(
+      //   body: Center(
+      //     child: Column(
+      // StatefulWidget practice
+      // mainAxisAlignment: MainAxisAlignment.center,
+      // children: [
+      //   showTitle ? const MyLargeTitle() : const Text('No Title'),
+      //   IconButton(
+      //     icon: const Icon(Icons.remove_red_eye),
+      //     onPressed: toggleTitle,
+      //   ),
+
+      // Text('Click Counter', style: TextStyle(fontSize: 24)),
+      // Text(
+      //   '$counter',
+      //   style: const TextStyle(
+      //     fontSize: 48,
+      //     fontWeight: FontWeight.bold,
+      //   ),
+      // ),
+      // for (var n in clickCounts)
+      //   Text('Click #$n', style: const TextStyle(fontSize: 10)),
+      // IconButton(
+      //   onPressed: onClicked,
+      //   icon: const Icon(Icons.add_box_rounded),
+      //   iconSize: 48,
+      // ),
+      // ],
+      // ),
+      // ),
+      // ),
+      // StatelessWidget practice
+      // home: Scaffold(
+      //   body: SingleChildScrollView(
+      //     child: Padding(
+      //       padding: const EdgeInsets.symmetric(horizontal: 20),
+      //       child: Column(
+      //         mainAxisAlignment: MainAxisAlignment.center,
+      //         crossAxisAlignment: CrossAxisAlignment.start,
+      //         children: [
+      //           const SizedBox(height: 70),
+      //           Row(
+      //             mainAxisAlignment: MainAxisAlignment.end,
+      //             children: [
+      //               Column(
+      //                 crossAxisAlignment: CrossAxisAlignment.end,
+      //                 children: [
+      //                   const Text(
+      //                     'Hey! Jamie',
+      //                     style: TextStyle(
+      //                       color: Colors.white,
+      //                       fontSize: 28,
+      //                       fontWeight: FontWeight.w600,
+      //                     ),
       //                   ),
-      //                 ),
-      //                 Text(
-      //                   'Welcome back',
-      //                   style: TextStyle(
-      //                     color: Colors.white.withAlpha(204),
-      //                     fontSize: 18,
+      //                   Text(
+      //                     'Welcome back',
+      //                     style: TextStyle(
+      //                       color: Colors.white.withAlpha(204),
+      //                       fontSize: 18,
+      //                     ),
       //                   ),
-      //                 ),
-      //               ],
+      //                 ],
       //             ),
       //           ],
       //         ),
@@ -181,40 +193,40 @@ class _AppState extends State<App> {
       //   ),
       // ),
       // backgroundColor: const Color(0xFF181818),
-    );
-  }
-}
+//     );
+//   }
+// }
 
-class MyLargeTitle extends StatefulWidget {
-  const MyLargeTitle({super.key});
+// class MyLargeTitle extends StatefulWidget {
+//   const MyLargeTitle({super.key});
 
-  @override
-  State<MyLargeTitle> createState() => _MyLargeTitleState();
-}
+//   @override
+//   State<MyLargeTitle> createState() => _MyLargeTitleState();
+// }
 
-class _MyLargeTitleState extends State<MyLargeTitle> {
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    print('initState');
-  }
+// class _MyLargeTitleState extends State<MyLargeTitle> {
+//   @override
+//   void initState() {
+//     // TODO: implement initState
+//     super.initState();
+//     print('initState');
+//   }
 
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    super.dispose();
-  }
+//   @override
+//   void dispose() {
+//     // TODO: implement dispose
+//     super.dispose();
+//   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      'My Large Title',
-      style: TextStyle(
-        fontSize: 32,
-        fontWeight: FontWeight.bold,
-        color: Theme.of(context).textTheme.titleLarge!.color,
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Text(
+//       'My Large Title',
+//       style: TextStyle(
+//         fontSize: 32,
+//         fontWeight: FontWeight.bold,
+//         color: Theme.of(context).textTheme.titleLarge!.color,
+//       ),
+//     );
+//   }
+// }
