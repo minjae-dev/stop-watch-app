@@ -1,16 +1,29 @@
-# apptoon
+# flutter Course
 
-A new Flutter project.
+#### summary1 - 플러터
+1. 플러터 모든 것은 위젯
+2. 위젯 변화없으면 stateless 위젯
+3. 위젯 모양이나 상태 바뀌면 stateful 위젯
+4. 위젯은 트리구조로 구성
 
-## Getting Started
+#### summary2 - 다트
+1. 클래스와 위젯 
+  - 클래스? 객체가 가져야할 속성 기능 정의한 내용 담은 설계도 역할 
+  - 객체? 클래스 정의 후 메모리 상 할당 시 이를 객체 
+  - 인스턴스? 클래스 기반 생성되고 클래스 속성 기능 똑같이 가져 프로그래밍 상에 사용되는 대상
+2. 클래스 속성과 기능
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+#### 3.App bar
+- leading : 아이콘 버튼 간단 위젯 왼쪽 배치
+- actions : 복수 아이콘 버튼 오른쪽 배치
+- onPressed : 함수 형태 일반 버튼 아이콘 버튼 터치시 이벤트 정의
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+#### BuildContext 
+- 위젯 트리에서 현재 위젯 위치 알 수 있는 정보
+BuildContext는 위젯 트리 내에서 현재 위젯의 위치를 알려주어, 위젯이 상위 위젯(테마, 내비게이션 등)의 정보에 접근하고 상호작용할 수 있게 해주는 객체
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+> 빌드 메서드는 컨텍스트를 넣어서 Scaffold 위젯으로 리턴해줌
+- stateless 위젯이나 state 빌드 메서드 의해 리턴된 위젯의 부모가 됌
+즉, 빌드 메소드에 리턴된 Scaffold 위젯은 그 부모의 빌드 컨텍스트 타입의 컨텍스트를 물려받음
+Scaffold 위젯에서 빌드 메서드로 리턴시 Scaffold 위젯의 진짜 컨텍스트를 가진 위젯을 물려받음
